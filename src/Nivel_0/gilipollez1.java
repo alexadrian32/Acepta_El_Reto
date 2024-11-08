@@ -18,7 +18,7 @@ public class gilipollez1 {
         System.out.print("Introduce el mensaje que quieres repetir: ");
         String mensaje = scanner.nextLine();
         
-        // Cierra el scanner
+        // Cerramos el scanner
         scanner.close();
 
         try {
@@ -51,6 +51,14 @@ public class gilipollez1 {
             if (KeyEvent.CHAR_UNDEFINED != keyCode) {
                 robot.keyPress(keyCode);
                 robot.keyRelease(keyCode);
+            }
+            
+            // Intentamos hacer una pausa entre cada carácter
+            try {
+                Thread.sleep(70);  // Pausa de 500 ms entre caracteres
+            } catch (InterruptedException e) {
+                System.out.println("Error al hacer la pausa entre caracteres.");
+                e.printStackTrace();
             }
         }
     }
